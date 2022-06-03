@@ -13,7 +13,8 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row>`;
@@ -44,9 +45,9 @@ function displayForecast() {
 
 function getForecast(coordinates) {
     let apiKey = "096a82d1a0dc6fe53e18dba6d1f4b25b";
-    let apiUrl = `https://api.openweathermap.org/data/2.5//onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`; 
     console.log(apiUrl);
-    axios.get(apiUrl).then(disp)
+    axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -99,8 +100,6 @@ function displayCelsiusTemperature(event) {
 }
 
 let celsiusTemperature = null;
-
-displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
