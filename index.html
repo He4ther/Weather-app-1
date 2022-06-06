@@ -12,11 +12,12 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/style.css"/>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
+
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <form id="search-form" class="mb-3">
@@ -29,7 +30,9 @@
               />
               </div>
               <div class="col-3">
-              <input type="submit" value="search" class="btn btn-primary w-100"/>
+              <input type="submit"
+              value="search" 
+              class="btn btn-primary w-100"/>
               </div>
             </div>
           </form>
@@ -38,11 +41,8 @@
               
             </h1>
             <ul>
-              <li>Last updated <span id="date"></span>
-              </li>
-
-              <li id="description">
-              </li>
+              <li>Last updated <span id="date"></span></li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
@@ -54,7 +54,8 @@
                          class="float-left"
                         />
                         <div class="float-left">
-                          <strong id="temperature"></strong><span class="units" 
+                          <strong id="temperature"></strong>
+                          <span class="units" 
                           ><a href="#" id="celsius-link">°C</a> |
                           <a href="#" id="fahrenheit-link">°F</a></span>
                        </div>  
@@ -63,20 +64,15 @@
                <div class="col-6">
                     <ul>
                        
-                       <li>
-                          Humidity: <span id="humidity"></span>%
-                       </li>
+                       <li>Humidity: <span id="humidity"></span>%</li>
 
-                        <li>
-                         Wind: <span id="wind"></span>km/h
-                       </li>
+                        <li>Wind: <span id="wind"></span>km/h</li>
                    </ul>
                </div>
           </div>
-             <div class="weather-forecast" id="forecast"> 
-            
-            </div>
-        </div>
+          <div class="weather-forecast" id="forecast"></div>
+    </div>
+    
         <small>
           <a href="https://github.com/He4ther/Weather-app-1" target="_blank"
             >Open-source code</a>
@@ -86,3 +82,4 @@
     </div>
 
     <script src="src/app.js"></script>
+    </html>
